@@ -1,0 +1,127 @@
+2014/05/23 18:32:29 [error] [php] date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Europe/Moscow' for 'MSD/4.0/DST' instead (/var/www/yii-web/yiiapp/protected/views/layouts/main.php:51)
+Stack trace:
+#0 /var/www/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /var/www/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#2 /var/www/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#3 /var/www/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#4 /var/www/yii/framework/web/CBaseController.php(214): CContentDecorator->run()
+#5 /var/www/yii/framework/web/CBaseController.php(308): SiteController->endWidget()
+#6 /var/www/yii-web/yiiapp/protected/views/layouts/column1.php(6): SiteController->endContent()
+#7 /var/www/yii/framework/web/CBaseController.php(126): require()
+#8 /var/www/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#9 /var/www/yii/framework/web/CController.php(784): SiteController->renderFile()
+#10 /var/www/yii-web/yiiapp/protected/controllers/SiteController.php(32): SiteController->render()
+#11 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#12 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#13 /var/www/yii/framework/web/CController.php(286): SiteController->runAction()
+#14 /var/www/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#15 /var/www/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#16 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#18 /var/www/yii-web/yiiapp/index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiapp/
+in /var/www/yii-web/yiiapp/protected/views/layouts/main.php (51)
+in /var/www/yii-web/yiiapp/protected/views/layouts/column1.php (6)
+in /var/www/yii-web/yiiapp/protected/controllers/SiteController.php (32)
+2014/05/23 18:32:38 [error] [php] date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Europe/Moscow' for 'MSD/4.0/DST' instead (/var/www/yii-web/yiiapp/protected/views/layouts/main.php:51)
+Stack trace:
+#0 /var/www/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /var/www/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#2 /var/www/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#3 /var/www/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#4 /var/www/yii/framework/web/CBaseController.php(214): CContentDecorator->run()
+#5 /var/www/yii/framework/web/CBaseController.php(308): SiteController->endWidget()
+#6 /var/www/yii-web/yiiapp/protected/views/layouts/column1.php(6): SiteController->endContent()
+#7 /var/www/yii/framework/web/CBaseController.php(126): require()
+#8 /var/www/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#9 /var/www/yii/framework/web/CController.php(784): SiteController->renderFile()
+#10 /var/www/yii-web/yiiapp/protected/controllers/SiteController.php(32): SiteController->render()
+#11 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#12 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#13 /var/www/yii/framework/web/CController.php(286): SiteController->runAction()
+#14 /var/www/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#15 /var/www/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#16 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#18 /var/www/yii-web/yiiapp/index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiapp/index.php?r=site/index
+in /var/www/yii-web/yiiapp/protected/views/layouts/main.php (51)
+in /var/www/yii-web/yiiapp/protected/views/layouts/column1.php (6)
+in /var/www/yii-web/yiiapp/protected/controllers/SiteController.php (32)
+2014/05/23 18:34:05 [error] [php] date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Europe/Moscow' for 'MSD/4.0/DST' instead (/var/www/yii-web/yiiapp/protected/views/layouts/main.php:51)
+Stack trace:
+#0 /var/www/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /var/www/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#2 /var/www/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#3 /var/www/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#4 /var/www/yii/framework/web/CBaseController.php(214): CContentDecorator->run()
+#5 /var/www/yii/framework/web/CBaseController.php(308): SiteController->endWidget()
+#6 /var/www/yii-web/yiiapp/protected/views/layouts/column1.php(6): SiteController->endContent()
+#7 /var/www/yii/framework/web/CBaseController.php(126): require()
+#8 /var/www/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#9 /var/www/yii/framework/web/CController.php(784): SiteController->renderFile()
+#10 /var/www/yii-web/yiiapp/protected/controllers/SiteController.php(32): SiteController->render()
+#11 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#12 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#13 /var/www/yii/framework/web/CController.php(286): SiteController->runAction()
+#14 /var/www/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#15 /var/www/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#16 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#18 /var/www/yii-web/yiiapp/index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiapp/index.php?r=site/index
+in /var/www/yii-web/yiiapp/protected/views/layouts/main.php (51)
+in /var/www/yii-web/yiiapp/protected/views/layouts/column1.php (6)
+in /var/www/yii-web/yiiapp/protected/controllers/SiteController.php (32)
+2014/05/23 22:08:06 [error] [exception.CException] exception 'CException' with message 'Alias "ext.bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/yii/framework/YiiBase.php:323
+Stack trace:
+#0 /var/www/yii/framework/YiiBase.php(196): YiiBase::import('ext.bootstrap', true)
+#1 /var/www/yii/framework/base/CModule.php(392): YiiBase::createComponent(Array)
+#2 /var/www/yii/framework/base/CModule.php(529): CModule->getComponent('bootstrap')
+#3 /var/www/yii/framework/base/CApplication.php(167): CModule->preloadComponents()
+#4 /var/www/yii/framework/YiiBase.php(125): CApplication->__construct('/var/www/yii-we...')
+#5 /var/www/yii/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/yii-we...')
+#6 /var/www/yii-web/yiiapp/index.php(13): YiiBase::createWebApplication('/var/www/yii-we...')
+#7 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/index
+HTTP_REFERER=http://yii.tennosys.dtdns.net/yiiapp/
+---
+2014/05/23 22:08:42 [error] [exception.CException] exception 'CException' with message 'Alias "application.extension.bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/yii/framework/YiiBase.php:323
+Stack trace:
+#0 /var/www/yii/framework/YiiBase.php(196): YiiBase::import('application.ext...', true)
+#1 /var/www/yii/framework/base/CModule.php(392): YiiBase::createComponent(Array)
+#2 /var/www/yii/framework/base/CModule.php(529): CModule->getComponent('bootstrap')
+#3 /var/www/yii/framework/base/CApplication.php(167): CModule->preloadComponents()
+#4 /var/www/yii/framework/YiiBase.php(125): CApplication->__construct('/var/www/yii-we...')
+#5 /var/www/yii/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/yii-we...')
+#6 /var/www/yii-web/yiiapp/index.php(13): YiiBase::createWebApplication('/var/www/yii-we...')
+#7 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/index
+HTTP_REFERER=http://yii.tennosys.dtdns.net/yiiapp/
+---
+2014/05/23 22:08:45 [error] [exception.CException] exception 'CException' with message 'Alias "application.extension.bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/yii/framework/YiiBase.php:323
+Stack trace:
+#0 /var/www/yii/framework/YiiBase.php(196): YiiBase::import('application.ext...', true)
+#1 /var/www/yii/framework/base/CModule.php(392): YiiBase::createComponent(Array)
+#2 /var/www/yii/framework/base/CModule.php(529): CModule->getComponent('bootstrap')
+#3 /var/www/yii/framework/base/CApplication.php(167): CModule->preloadComponents()
+#4 /var/www/yii/framework/YiiBase.php(125): CApplication->__construct('/var/www/yii-we...')
+#5 /var/www/yii/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/var/www/yii-we...')
+#6 /var/www/yii-web/yiiapp/index.php(13): YiiBase::createWebApplication('/var/www/yii-we...')
+#7 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/index
+HTTP_REFERER=http://yii.tennosys.dtdns.net/yiiapp/
+---
+2014/05/23 22:12:07 [error] [php] include(bootstrap.php): failed to open stream: No such file or directory (/var/www/yii/framework/YiiBase.php:432)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 /var/www/yii/framework/YiiBase.php(303): class_exists()
+#2 /var/www/yii/framework/YiiBase.php(196): import()
+#3 /var/www/yii/framework/base/CModule.php(392): createComponent()
+#4 /var/www/yii/framework/base/CModule.php(529): CWebApplication->getComponent()
+#5 /var/www/yii/framework/base/CApplication.php(167): CWebApplication->preloadComponents()
+#6 /var/www/yii/framework/YiiBase.php(125): CWebApplication->__construct()
+#7 /var/www/yii/framework/YiiBase.php(98): createApplication()
+#8 /var/www/yii-web/yiiapp/index.php(13): createWebApplication()
+REQUEST_URI=/yiiapp/index.php?r=site/index
+in /var/www/yii-web/yiiapp/index.php (13)
