@@ -133,7 +133,14 @@ class SSOIdentity extends CComponent implements IUserIdentity
 		return $this->level;
 	}
 
-	/**
+        public function  isAdmin()
+        {
+            return $this->nrm == "M0509069";
+        }
+
+        
+
+        /**
 	 * Returns a value indicating whether the identity is authenticated.
 	 * @return boolean Whether the identity is valid.
 	 */
