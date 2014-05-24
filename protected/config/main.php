@@ -58,8 +58,10 @@ return array(
 		),
 		*/
 		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		),
+                    'connectionString' => 'pgsql:host=localhost;port=5432;dbname=yiiapp',
+                    'username' => 'yiiapp',
+                    'password' => 'yiiapp'
+                ),
 		// uncomment the following to use a MySQL database
 		/*
 		'db'=>array(

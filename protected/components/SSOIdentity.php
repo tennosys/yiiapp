@@ -1,7 +1,6 @@
 <?php
 
 /*
- * We assume that the SimpleSAMLphp is installed in the webroot. Modify if necessary.
  * The _autoload.php will register SimpleSAMLphp's own autoloader, which shall be prepended before Yii's autoloader.
  * Therefore we will unregister and then register again the autoloader of Yii, which is the same process Yii:: registerAutoloader() would do.
  */
@@ -11,10 +10,10 @@ require_once "/var/www/simplesamlphp-1.12.0/lib/SimpleSAML/Auth/Simple.php";
 spl_autoload_register(array('YiiBase','autoload'));
 
 /**
- * Defines an identity authenticated with the Neptun academic registry system through SimpleSAMLphp.
- * The Neptun system is used at severel hungarian universities.
+ * Defines an identity authenticated with the SSO academic registry system through SimpleSAMLphp.
+ * The SSO system is used at severel hungarian universities.
  * 
- * @property string $id The Neptun code of the user, which uniquely represents the identity.
+ * @property string $id The SSO code of the user, which uniquely represents the identity.
  * @property-read string $name The display name for the identity.
  * @property-read boolean $isAuthenticated Whether the identity is valid.
  * @property-read array $persistentStates Additional identity information that needs to be persistent during the user session (excluding {@link id}).
@@ -34,7 +33,7 @@ class SSOIdentity extends CComponent implements IUserIdentity
 	
         
 	/**
-	 * Creates a new NeptunIdentity instance.
+	 * Creates a new SSOIdentity instance.
 	 */
 	public function __construct()
 	{
@@ -61,9 +60,9 @@ class SSOIdentity extends CComponent implements IUserIdentity
 	}
 
 	/**
-	 * Returns the Neptun code of the user.
-	 * The Neptun code uniquely represents the identity.
-	 * @return string The Neptun code of the user.
+	 * Returns the SSO code of the user.
+	 * The SSO code uniquely represents the identity.
+	 * @return string The SSO code of the user.
 	 */
 	public function getId()
 	{
@@ -77,6 +76,61 @@ class SSOIdentity extends CComponent implements IUserIdentity
 	public function getName()
 	{
 		return $this->nama;
+	}
+
+	/**
+	 * Returns the display alamat for the identity.
+	 * @return string The alamat of the user.
+	 */
+	public function getAlamat()
+	{
+		return $this->alamat;
+	}
+
+        
+	/**
+	 * Returns the display telp for the identity.
+	 * @return string The telp of the user.
+	 */
+	public function getTelp()
+	{
+		return $this->telp;
+	}
+
+	/**
+	 * Returns the display email_address for the identity.
+	 * @return string The email_address of the user.
+	 */
+	public function getEmail()
+	{
+		return $this->email_address;
+	}
+        
+	/**
+	 * Returns the display kode_kab for the identity.
+	 * @return string The kode_kab of the user.
+	 */
+	public function getKab()
+	{
+		return $this->kode_kab;
+	}
+        
+	/**
+	 * Returns the display kode_provinsi for the identity.
+	 * @return string The kode_provinsi of the user.
+	 */
+	public function getProv()
+	{
+		return $this->kode_provinsi;
+	}
+        
+	/**
+	 * Returns the display level for the identity.
+	 * @return string The level of the user.
+	 */
+	public function getLevel()
+	{
+		return $this->level;
 	}
 
 	/**
