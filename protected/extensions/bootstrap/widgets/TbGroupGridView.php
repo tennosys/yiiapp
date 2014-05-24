@@ -10,7 +10,7 @@
  * @author         antonio ramirez <antonio@clevertech.biz>
  */
 
-Yii::import('booster.widgets.TbGridView');
+Yii::import('bootstrap.widgets.TbGridView');
 
 /**
  *## TbGroupGridView widget
@@ -199,8 +199,7 @@ class TbGroupGridView extends TbGridView
 		}
 
 		//iterate data
-		$rowcount = count($data);
-		for ($i = 1; $i < $rowcount; $i++) {
+		for ($i = 1; $i < count($data); $i++) {
 			//save row values in array
 			$current = $this->getRowValues($groupColumns, $data[$i], $i);
 

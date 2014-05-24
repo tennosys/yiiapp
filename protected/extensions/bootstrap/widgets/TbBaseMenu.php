@@ -14,7 +14,8 @@ Yii::import('zii.widgets.CMenu');
  *
  * @package booster.widgets.navigation
  */
-abstract class TbBaseMenu extends CMenu {
+abstract class TbBaseMenu extends CMenu
+{
 	/**
 	 *### .getDividerCssClass()
 	 *
@@ -47,8 +48,8 @@ abstract class TbBaseMenu extends CMenu {
 	 * @param array $items menu items. Each menu item will be an array with at least two elements: 'label' and 'active'.
 	 * It may have three other optional elements: 'items', 'linkOptions' and 'itemOptions'.
 	 */
-	protected function renderMenu($items) {
-		
+	protected function renderMenu($items)
+	{
 		$n = count($items);
 
 		if ($n > 0) {
@@ -117,7 +118,7 @@ abstract class TbBaseMenu extends CMenu {
 						);
 						$dropdownOptions['id'] = isset($dropdownOptions['htmlOptions']['id']) ? 
 							$dropdownOptions['htmlOptions']['id'] : null;
-						$this->controller->widget('booster.widgets.TbDropdown', $dropdownOptions);
+						$this->controller->widget('bootstrap.widgets.TbDropdown', $dropdownOptions);
 					}
 
 					echo '</li>';
@@ -138,15 +139,14 @@ abstract class TbBaseMenu extends CMenu {
 	 *
 	 * @return string the rendered item
 	 */
-	protected function renderMenuItem($item) {
-		
+	protected function renderMenuItem($item)
+	{
 		if (isset($item['icon'])) {
 			if (strpos($item['icon'], 'icon') === false && strpos($item['icon'], 'fa') === false) {
-				$item['icon'] = 'glyphicon glyphicon-' . implode(' glyphicon-', explode(' ', $item['icon']));
-				$item['label'] = '<span class="' . $item['icon'] . '"></span> ' . $item['label'];
-			} else {
-				$item['label'] = '<i class="' . $item['icon'] . '"></i> ' . $item['label'];
+				$item['icon'] = 'icon-' . implode(' icon-', explode(' ', $item['icon']));
 			}
+
+			$item['label'] = '<i class="' . $item['icon'] . '"></i> ' . $item['label'];
 		}
 
 		if (!isset($item['linkOptions'])) {

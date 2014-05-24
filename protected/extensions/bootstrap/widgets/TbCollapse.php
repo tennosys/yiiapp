@@ -14,7 +14,7 @@
  *
  * @package booster.widgets.grouping
  */
-class TbCollapse extends CWidget /* is this widget needed */
+class TbCollapse extends CWidget
 {
 	const CONTAINER_PREFIX = 'yii_bootstrap_collapse_';
 

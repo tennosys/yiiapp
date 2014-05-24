@@ -252,7 +252,7 @@ function() {
 			echo CHtml::link('<i class="' . $button['icon'] . '"></i>', $button['url'], $button['htmlOptions']);
 		} else {
 			$button['label'] = $this->getButtonLabel($checked);
-			$button['class'] = 'booster.widgets.TbButton';
+			$button['class'] = 'bootstrap.widgets.TbButton';
 			$widget = Yii::createComponent($button);
 			$widget->init();
 			$widget->run();

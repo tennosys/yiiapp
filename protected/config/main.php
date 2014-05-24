@@ -44,8 +44,8 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 		'bootstrap' => array(
-            'class' => 'bootstrap.components.Booster',
-        ),
+                    'class' => 'bootstrap.components.Bootstrap',
+                ),
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(

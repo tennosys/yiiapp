@@ -15,8 +15,8 @@
  *
 * @package booster.widgets.forms.inputs.wysiwyg
  */
-class TbHtml5Editor extends CInputWidget {
-	
+class TbHtml5Editor extends CInputWidget
+{
 	/**
 	 * Editor language
 	 * Supports: de-DE, es-ES, fr-FR, pt-BR, sv-SE, it-IT
@@ -46,7 +46,8 @@ class TbHtml5Editor extends CInputWidget {
 	/**
 	 * Display editor
 	 */
-	public function run() {
+	public function run()
+	{
 
 		list($name, $id) = $this->resolveNameID();
 
@@ -70,13 +71,12 @@ class TbHtml5Editor extends CInputWidget {
 	 *
 	 * @param string $id
 	 */
-	public function registerClientScript($id) {
-		
-        $booster = Booster::getBooster();
-        $booster->registerPackage('wysihtml5');
-        //$booster->registerAssetCss('bootstrap-wysihtml5.css');
-        //$booster->registerAssetJs('wysihtml5-0.3.0.js');
-        //$booster->registerAssetJs('bootstrap-wysihtml5.js');
+	public function registerClientScript($id)
+	{
+        $booster = Bootstrap::getBooster();
+        $booster->registerAssetCss('bootstrap-wysihtml5.css');
+        $booster->registerAssetJs('wysihtml5-0.3.0.js');
+        $booster->registerAssetJs('bootstrap-wysihtml5.js');
 
 		if (isset($this->editorOptions['locale'])) {
             $booster->registerAssetJs(
@@ -104,9 +104,12 @@ class TbHtml5Editor extends CInputWidget {
 		/**
 		 * Check if we need a deep copy for the configuration.
 		 */
-		if (isset($this->editorOptions['deepExtend']) && $this->editorOptions['deepExtend'] === true) {
+		if (isset($this->editorOptions['deepExtend']) && $this->editorOptions['deepExtend'] === true)
+		{
 			$script[] = "$('#{$id}').wysihtml5('deepExtend', {$options});";
-		} else {
+		}
+		else
+		{
 			$script[] = "$('#{$id}').wysihtml5({$options});";
 		}
 
@@ -119,7 +122,7 @@ class TbHtml5Editor extends CInputWidget {
 			return;
 		}
 
-		$defaultStyleSheetUrl = Booster::getBooster()->getAssetsUrl() . '/css/wysiwyg-color.css';
+		$defaultStyleSheetUrl = Bootstrap::getBooster()->getAssetsUrl() . '/css/wysiwyg-color.css';
 		array_unshift($this->editorOptions['stylesheets'], $defaultStyleSheetUrl); // we want default css to be first
 	}
 

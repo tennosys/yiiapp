@@ -17,17 +17,11 @@
 class TbBadge extends CWidget
 {
 	const TYPE_SUCCESS = 'success';
-	const TYPE_INFO = 'info';
 	const TYPE_WARNING = 'warning';
-	const TYPE_DANGER = 'danger';
+	const TYPE_IMPORTANT = 'important';
+	const TYPE_INFO = 'info';
+	const TYPE_INVERSE = 'inverse';
 
-	protected static $typeClasses = array (
-		self::TYPE_SUCCESS => 'success',
-		self::TYPE_INFO => 'info',
-		self::TYPE_WARNING => 'warning',
-		self::TYPE_DANGER => 'danger',
-	);
-	
 	/**
 	 * @var string the badge type.
 	 *
@@ -55,19 +49,20 @@ class TbBadge extends CWidget
 	 *
 	 * At the start of widget we collect the attributes for badge tag.
 	 */
-	public function init() {
-		
+	public function init()
+	{
 		$classes = array('badge');
 
 		$validTypes = array(
 			self::TYPE_SUCCESS,
-			self::TYPE_INFO,
 			self::TYPE_WARNING,
-			self::TYPE_DANGER,
+			self::TYPE_IMPORTANT,
+			self::TYPE_INFO,
+			self::TYPE_INVERSE
 		);
 
 		if (isset($this->type) && in_array($this->type, $validTypes)) {
-			$classes[] = 'alert-' . self::$typeClasses[$this->type];
+			$classes[] = 'badge-' . $this->type;
 		}
 
 		if (!empty($classes)) {

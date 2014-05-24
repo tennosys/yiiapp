@@ -7,7 +7,7 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-Yii::import('booster.widgets.TbMenu');
+Yii::import('bootstrap.widgets.TbMenu');
 
 /**
  *## Bootstrap Javascript tabs widget.
@@ -128,7 +128,7 @@ class TbTabs extends CWidget
 
 		ob_start();
 		$this->controller->widget(
-			'booster.widgets.TbMenu',
+			'bootstrap.widgets.TbMenu',
 			array(
 				'stacked' => $this->stacked,
 				'type' => $this->type,

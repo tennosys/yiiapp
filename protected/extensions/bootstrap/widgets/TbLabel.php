@@ -14,21 +14,20 @@
  *
  * @package booster.widgets.decoration
  */
-class TbLabel extends CWidget {
-	// 'default', 'primary', 'success', 'info', 'warning', 'danger '
-	const TYPE_DEFAULT 	= 'default';
-	const TYPE_PRIMARY	= 'primary';
-	const TYPE_SUCCESS 	= 'success';
-	const TYPE_INFO 	= 'info';
-	const TYPE_WARNING 	= 'warning';
-	const TYPE_DANGER 	= 'danger';
+class TbLabel extends CWidget
+{
+	const TYPE_SUCCESS = 'success';
+	const TYPE_WARNING = 'warning';
+	const TYPE_IMPORTANT = 'important';
+	const TYPE_INFO = 'info';
+	const TYPE_INVERSE = 'inverse';
 
 	/**
 	 * @var string the label type.
 	 *
      * See `TYPE_*` constants for list of allowed types.
 	 */
-	public $type = self::TYPE_DEFAULT;
+	public $type;
 
 	/**
 	 * @var string the label text.
@@ -50,17 +49,16 @@ class TbLabel extends CWidget {
 	 *
      * At the start of widget we collect the attributes for badge tag.
 	 */
-	public function init() {
-		
+	public function init()
+	{
 		$classes = array('label');
 
 		$validTypes = array(
-			self::TYPE_DEFAULT,
-			self::TYPE_PRIMARY,
 			self::TYPE_SUCCESS,
-			self::TYPE_INFO,
 			self::TYPE_WARNING,
-			self::TYPE_DANGER,
+			self::TYPE_IMPORTANT,
+			self::TYPE_INFO,
+			self::TYPE_INVERSE
 		);
 
 		if (isset($this->type) && in_array($this->type, $validTypes)) {
@@ -86,8 +84,8 @@ class TbLabel extends CWidget {
 	 *
      * Upon completing the badge we write the span tag with collected attributes to document.
 	 */
-	public function run() {
-		
+	public function run()
+	{
 		echo CHtml::tag('span', $this->htmlOptions, $this->label);
 	}
 }

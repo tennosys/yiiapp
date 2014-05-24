@@ -34,7 +34,7 @@ class TbUiLayout extends CWidget
      */
     public function init()
     {
-        Booster::getBooster()->registerPackage('ui-layout');
+        Bootstrap::getBooster()->registerPackage('ui-layout');
 
         if (!is_array($this->options)) {
             $this->options = array();

@@ -10,7 +10,6 @@
 		months: ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"],
 		monthsShort: ["Ian", "Feb", "Mar", "Apr", "Mai", "Iun", "Iul", "Aug", "Sep", "Oct", "Nov", "Dec"],
 		today: "Astăzi",
-		clear: "Șterge",
 		weekStart: 1
 	};
 }(jQuery));

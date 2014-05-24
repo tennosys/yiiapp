@@ -15,27 +15,17 @@
  * @package booster.widgets.decoration
  * @since 0.9.10
  */
-class TbProgress extends CWidget {
-	
-	const TYPE_DEFAULT = 'default';
-	const TYPE_SUCCESS = 'success';
+class TbProgress extends CWidget
+{
 	const TYPE_INFO = 'info';
+	const TYPE_SUCCESS = 'success';
 	const TYPE_WARNING = 'warning';
 	const TYPE_DANGER = 'danger';
 
-	protected static $typeClasses = array (
-			self::TYPE_DEFAULT => '',
-			self::TYPE_SUCCESS => 'success',
-			self::TYPE_INFO => 'info',
-			self::TYPE_WARNING => 'warning',
-			self::TYPE_DANGER => 'danger',
-	);
-	
 	/**
 	 * @var string the bar type. Valid values are 'info', 'success', and 'danger'.
 	 */
-	public $type = self::TYPE_DEFAULT;
-	
+	public $type;
 	/**
 	 * @var boolean indicates whether the bar is striped.
 	 */
@@ -73,27 +63,25 @@ class TbProgress extends CWidget {
 	 */
 	public $stacked;
 
-	protected $progressClasses = array('progress');
-	protected $progressBarClasses = array('progress-bar');
-	
 	/**
 	 *### .init()
 	 *
 	 * Initializes the widget.
 	 */
-	public function init() {
-		
-		// if (empty($this->stacked)) {
-			$validTypes = array(self::TYPE_SUCCESS, self::TYPE_INFO, self::TYPE_WARNING, self::TYPE_DANGER);
+	public function init()
+	{
+		$classes = array('progress');
+		if (empty($this->stacked)) {
+			$validTypes = array(self::TYPE_INFO, self::TYPE_SUCCESS, self::TYPE_WARNING, self::TYPE_DANGER);
 
 			if (isset($this->type) && in_array($this->type, $validTypes)) {
-				$this->progressBarClasses[] = 'progress-bar-' . $this->type;
+				$classes[] = 'progress-' . $this->type;
 			}
 			if ($this->striped) {
-				$this->progressClasses[] = 'progress-striped';
+				$classes[] = 'progress-striped';
 			}
 			if ($this->animated) {
-				$this->progressClasses[] = 'active';
+				$classes[] = 'active';
 			}
 
 			if ($this->percent < 0) {
@@ -101,14 +89,14 @@ class TbProgress extends CWidget {
 			} else if ($this->percent > 100) {
 				$this->percent = 100;
 			}
-		// }
+		}
 
-		if (!empty($this->progressClasses)) {
-			$this->progressClasses = implode(' ', $this->progressClasses);
+		if (!empty($classes)) {
+			$classes = implode(' ', $classes);
 			if (isset($this->htmlOptions['class'])) {
-				$this->htmlOptions['class'] .= ' ' . $this->progressClasses;
+				$this->htmlOptions['class'] .= ' ' . $classes;
 			} else {
-				$this->htmlOptions['class'] = $this->progressClasses;
+				$this->htmlOptions['class'] = $classes;
 			}
 		}
 	}
@@ -120,11 +108,11 @@ class TbProgress extends CWidget {
 	 * @since  9/21/12 8:13 PM  antonio ramirez <antonio@clevertech.biz>
 	 * Updated to use stacked progress bars
 	 */
-	public function run() {
-		
+	public function run()
+	{
 		echo CHtml::openTag('div', $this->htmlOptions);
 		if (empty($this->stacked)) {
-			echo '<div class="'.implode(' ', $this->progressBarClasses).'" style="width: ' . $this->percent . '%;">' . $this->content . '</div>';
+			echo '<div class="bar" style="width: ' . $this->percent . '%;">' . $this->content . '</div>';
 		} elseif (is_array($this->stacked)) {
 			foreach ($this->stacked as $bar) {
 				$options = isset($bar['htmlOptions']) ? $bar['htmlOptions'] : array();
@@ -140,7 +128,7 @@ class TbProgress extends CWidget {
 				} else {
 					$options['style'] .= ' ';
 				}
-				$options['class'] .= 'progress-bar progress-bar-' . $bar['type'];
+				$options['class'] .= 'bar bar-' . $bar['type'];
 
 				echo '<div ' . CHtml::renderAttributes($options) . '>' . @$bar['content'] . '</div>';
 			}

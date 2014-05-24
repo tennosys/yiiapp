@@ -7,7 +7,7 @@
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php) 
  */
 
-Yii::import('booster.widgets.TbGridView');
+Yii::import('bootstrap.widgets.TbGridView');
 
 /**
  *## TbExtendedGridView is an extended version of TbGridView.
@@ -221,7 +221,7 @@ class TbExtendedGridView extends TbGridView
 		}
 		if ($this->bulkActions !== array() && isset($this->bulkActions['actionButtons'])) {
 			if (!isset($this->bulkActions['class'])) {
-				$this->bulkActions['class'] = 'booster.widgets.TbBulkActions';
+				$this->bulkActions['class'] = 'bootstrap.widgets.TbBulkActions';
 			}
 
 			$this->bulk = Yii::createComponent($this->bulkActions, $this);
@@ -371,7 +371,7 @@ class TbExtendedGridView extends TbGridView
 	 */
 	public function renderBulkActions()
 	{
-        Booster::getBooster()->registerAssetJs('jquery.saveselection.gridview.js');
+        Bootstrap::getBooster()->registerAssetJs('jquery.saveselection.gridview.js');
         $this->componentsAfterAjaxUpdate[] = "$.fn.yiiGridView.afterUpdateGrid('".$this->id."');";
 		echo '<tr><td colspan="' . count($this->columns) . '">';
 		$this->bulk->renderButtons();
@@ -412,7 +412,7 @@ class TbExtendedGridView extends TbGridView
 		// render switch buttons
 		$buttons = Yii::createComponent(
 			array(
-				'class' => 'booster.widgets.TbButtonGroup',
+				'class' => 'bootstrap.widgets.TbButtonGroup',
 				'toggle' => 'radio',
 				'buttons' => array(
 					array(
@@ -477,8 +477,6 @@ class TbExtendedGridView extends TbGridView
 			}
 			++$cnt;
 		}
-
-		$xAxisData = [];
 		
 		$xAxisData[] = array('categories'=>array());
 		if(!empty($this->chartOptions['data']['xAxis'])){
@@ -539,7 +537,7 @@ class TbExtendedGridView extends TbGridView
 			$this->componentsAfterAjaxUpdate[] = "highchart{$chartId} = new Highcharts.Chart($('#{$chartId}').data('config'));";
 		}
 		$configChart = array(
-			'class' => 'booster.widgets.TbHighCharts',
+			'class' => 'bootstrap.widgets.TbHighCharts',
 			'id' => $chartId,
 			'options' => $options,
 			'htmlOptions' => $this->chartOptions['htmlOptions']
@@ -669,7 +667,7 @@ class TbExtendedGridView extends TbGridView
 
 		$fixedHeaderJs = '';
 		if ($this->fixedHeader) {
-            Booster::getBooster()->registerAssetJs('jquery.stickytableheaders' . (!YII_DEBUG ? '.min' : '') . '.js');
+            Bootstrap::getBooster()->registerAssetJs('jquery.stickytableheaders' . (!YII_DEBUG ? '.min' : '') . '.js');
 			$fixedHeaderJs = "$('#{$this->id} table.items').stickyTableHeaders({fixedOffset:{$this->headerOffset}});";
 			$this->componentsAfterAjaxUpdate[] = $fixedHeaderJs;
 		}
@@ -690,7 +688,7 @@ class TbExtendedGridView extends TbGridView
 
 			$this->selectableRows = 1;
 			$cs->registerCoreScript('jquery.ui');
-            Booster::getBooster()->registerAssetJs('jquery.sortable.gridview.js');
+            Bootstrap::getBooster()->registerAssetJs('jquery.sortable.gridview.js');
 
 			if ($this->sortableAjaxSave && $this->sortableAction !== null) {
 				$sortableAction = Yii::app()->createUrl(
@@ -729,7 +727,7 @@ class TbExtendedGridView extends TbGridView
 				}
 			}
 			$cs->registerCoreScript('jquery.ui');
-            Booster::getBooster()->registerAssetJs('jquery.selectable.gridview.js');
+            Bootstrap::getBooster()->registerAssetJs('jquery.selectable.gridview.js');
 			$afterSelectableCells = CJavaScript::encode($afterSelectableCells);
 			$this->componentsReadyScripts[] = "$.fn.yiiGridView.selectable('{$this->id}','{$this->selectableCellsFilter}',{$afterSelectableCells});";
 			$this->componentsAfterAjaxUpdate[] = "$.fn.yiiGridView.selectable('{$this->id}','{$this->selectableCellsFilter}', {$afterSelectableCells});";
@@ -738,7 +736,7 @@ class TbExtendedGridView extends TbGridView
 		$cs->registerScript(
 			__CLASS__ . '#' . $this->id . 'Ex',
 			'
-			var $grid = $("#' . $this->id . '");
+					   $grid = $("#' . $this->id . '");
 			' . $fixedHeaderJs . '
 			if ($(".' . $this->extendedSummaryCssClass . '", $grid).length)
 			{
@@ -1228,7 +1226,7 @@ class TbPercentOfTypeGooglePieOperation extends TbPercentOfTypeOperation
 	{
 		$chart = Yii::createComponent(
 			array(
-				'class' => 'booster.widgets.TbGoogleVisualizationChart',
+				'class' => 'bootstrap.widgets.TbGoogleVisualizationChart',
 				'visualization' => 'PieChart',
 				'containerId' => $this->getId(),
 				'data' => $this->data,
@@ -1319,7 +1317,7 @@ class TbPercentOfTypeEasyPieOperation extends TbPercentOfTypeOperation
 	 */
 	protected function registerClientScripts()
 	{
-        $booster = Booster::getBooster();
+        $booster = Bootstrap::getBooster();
         $booster->registerAssetCss('easy-pie-chart.css');
         $booster->registerAssetJs('jquery.easy.pie.chart.js');
 

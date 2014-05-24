@@ -10,7 +10,6 @@
     monthsShort: ['Jan','Feb','Mar','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Des'],
     today: 'I dag',
     clear: 'Nullstill',
-    weekStart: 1,
-    format: 'dd.mm.yyyy'
+    weekStart: 0
   };
 }(jQuery));

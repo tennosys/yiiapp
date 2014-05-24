@@ -7,7 +7,7 @@
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  */
 
-Yii::import('booster.widgets.TbJsonGridColumn');
+Yii::import('bootstrap.widgets.TbJsonGridColumn');
 
 /**
  *## TbJsonDataColumn class

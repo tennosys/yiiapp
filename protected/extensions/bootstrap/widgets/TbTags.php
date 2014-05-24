@@ -181,7 +181,7 @@ class TbTags extends CInputWidget
 	 */
 	public function registerClientScript($id)
 	{
-        $booster = Booster::getBooster();
+        $booster = Bootstrap::getBooster();
         $booster->registerAssetCss('bootstrap-tags.css');
         $booster->registerAssetJs('bootstrap.tags.js');
 

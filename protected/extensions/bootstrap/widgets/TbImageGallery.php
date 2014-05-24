@@ -18,7 +18,7 @@ class TbImageGallery extends CWidget
 	/**
 	 * @var string name of the view to display images (modal dialog used for the image gallery)
 	 */
-	public $previewImagesView = 'booster.views.gallery.preview';
+	public $previewImagesView = 'bootstrap.views.gallery.preview';
 
 	/**
 	 * @var bool enable full screen
@@ -45,7 +45,7 @@ class TbImageGallery extends CWidget
 
 	public function init()
 	{
-        $booster = Booster::getBooster();
+        $booster = Bootstrap::getBooster();
         $booster->registerAssetCss('bootstrap-image-gallery' . (!YII_DEBUG ? '.min' : '') . '.css');
         $booster->registerAssetJs('fileupload/load-image.min.js');
         $booster->registerAssetJs('bootstrap-image-gallery' . (!YII_DEBUG ? '.min' : '') . '.js');
