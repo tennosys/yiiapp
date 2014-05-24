@@ -96,10 +96,10 @@ class SiteController extends Controller
 //		}
 //		// display the login form
 //		$this->render('login',array('model'=>$model));
-            $Simplesaml = SSOIdentity::getInstance();
-            $Simplesaml->authenticate();
+            $SSOIdentity = SSOIdentity::getInstance();
+            $SSOIdentity->authenticate();
             $duration = 3600*24*30; // 30 days
-            Yii::app()->user->login($Simplesaml,$duration);
+            Yii::app()->user->login($SSOIdentity,$duration);
             $this->redirect(Yii::app()->user->returnUrl);
 	}
 
