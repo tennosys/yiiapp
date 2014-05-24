@@ -98,7 +98,7 @@ class SiteController extends Controller
 //		$this->render('login',array('model'=>$model));
             $Simplesaml = Simplesaml::getInstance();
             $Simplesaml->requireAuth();
-            $duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
+            $duration = 3600*24*30; // 30 days
             Yii::app()->user->login($Simplesaml,$duration);
             $this->redirect(Yii::app()->user->returnUrl);
 	}
