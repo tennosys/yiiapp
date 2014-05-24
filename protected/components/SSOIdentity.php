@@ -32,6 +32,7 @@ class SSOIdentity extends CComponent implements IUserIdentity
 	 */
 	protected $_attributes = array();
 	
+        
 	/**
 	 * Creates a new NeptunIdentity instance.
 	 */
@@ -40,14 +41,7 @@ class SSOIdentity extends CComponent implements IUserIdentity
 		$this->_simpleSaml = new SimpleSAML_Auth_Simple('default-sp');
 		$this->_attributes = $this->_simpleSaml->getAttributes();
 	}
-	
-        public static function getInstance() {
-            if (self::$instance == null) {
-                self::$instance = new SSOIdentity();
-            }
-            return self::$instance;
-        }
-        
+	        
 	/**
 	 * Authenticates the user.
 	 * 

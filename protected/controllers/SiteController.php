@@ -96,7 +96,7 @@ class SiteController extends Controller
 //		}
 //		// display the login form
 //		$this->render('login',array('model'=>$model));
-            $SSOIdentity = SSOIdentity::getInstance();
+            $SSOIdentity = new SSOIdentity();
             $SSOIdentity->authenticate();
             $duration = 3600*24*30; // 30 days
             Yii::app()->user->login($SSOIdentity,$duration);
