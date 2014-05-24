@@ -99,6 +99,7 @@ class SiteController extends Controller
             $Simplesaml = Simplesaml::getInstance();
             $Simplesaml->requireAuth();
             var_dump($Simplesaml->getAttributes());
+            echo(Yii::getPathOfAlias('webroot'));
 	}
 
 	/**
