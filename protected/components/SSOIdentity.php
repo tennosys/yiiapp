@@ -6,8 +6,8 @@
  * Therefore we will unregister and then register again the autoloader of Yii, which is the same process Yii:: registerAutoloader() would do.
  */
 spl_autoload_unregister(array('YiiBase','autoload'));
-require_once Yii::getPathOfAlias('webroot') . "/samlsrc/simplesamlphp/lib/_autoload.php";
-require_once Yii::getPathOfAlias('webroot') . "/samlsrc/simplesamlphp/lib/SimpleSAML/Auth/Simple.php";
+require_once "/var/www/simplesamlphp-1.12.0/lib/_autoload.php";
+require_once "/var/www/simplesamlphp-1.12.0/lib/SimpleSAML/Auth/Simple.php";
 spl_autoload_register(array('YiiBase','autoload'));
 
 /**
@@ -66,7 +66,7 @@ class SSOIdentity extends CComponent implements IUserIdentity
 	 */
 	public function getId()
 	{
-		return $this->niifPersonOrgID;
+		return $this->nrm;
 	}
 	
 	/**
@@ -75,7 +75,7 @@ class SSOIdentity extends CComponent implements IUserIdentity
 	 */
 	public function getName()
 	{
-		return $this->displayName;
+		return $this->nama;
 	}
 
 	/**
