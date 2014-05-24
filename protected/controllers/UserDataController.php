@@ -34,7 +34,7 @@ class UserDataController extends Controller {
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
                 'actions' => array('admin', 'delete'),
-                'users' => array('Teno Siwono'),
+                'users' => array('@'),
                 //'expression'=>'Yii::app()->user->isAdmin()',
             ),
             array('deny', // deny all users
