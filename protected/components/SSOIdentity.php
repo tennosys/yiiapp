@@ -41,6 +41,13 @@ class SSOIdentity extends CComponent implements IUserIdentity
 		$this->_attributes = $this->_simpleSaml->getAttributes();
 	}
 	
+        public static function getInstance() {
+            if (self::$instance == null) {
+                self::$instance = new SSOIdentity();
+            }
+            return self::$instance;
+        }
+        
 	/**
 	 * Authenticates the user.
 	 * 
